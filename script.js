@@ -3,22 +3,26 @@ const products = [
     {
         name: 'Coffee Maker',
         droppedImage: 'images/Coffee maker capsule dropped.webp',
-        openedImage: 'images/Coffee maker opened.webp'
+        openedImage: 'images/Coffee maker opened.webp',
+        productUrl: 'https://a.co/d/a5K9m1x'
     },
     {
         name: 'Water Bottle',
         droppedImage: 'images/Water bottle dropped.webp',
-        openedImage: 'images/Water bottle opened.webp'
+        openedImage: 'images/Water bottle opened.webp',
+        productUrl: 'https://a.co/d/0fuIJwN'
     },
     {
         name: 'Badminton Plush Toy',
         droppedImage: 'images/Badminton plush toy dropped.webp',
-        openedImage: 'images/Badminton plush toy opened.webp'
+        openedImage: 'images/Badminton plush toy opened.webp',
+        productUrl: 'https://www.nordstrom.com/s/amusable-sports-badminton-plush-toy/7744990'
     },
     {
         name: 'Cat Slippers',
         droppedImage: 'images/Cat slippers dropped.webp',
-        openedImage: 'images/Cat slippers opened.webp'
+        openedImage: 'images/Cat slippers opened.webp',
+        productUrl: 'https://a.co/d/9SXxFoJ'
     }
 ];
 
@@ -102,6 +106,11 @@ function openCapsule() {
 
 function handleCollectClick() {
     if (currentState !== 'opened') return;
+
+    // Open product link in new tab
+    if (currentProduct && currentProduct.productUrl) {
+        window.open(currentProduct.productUrl, '_blank');
+    }
 
     // Add button animation
     collectHotspot.classList.add('collecting');
