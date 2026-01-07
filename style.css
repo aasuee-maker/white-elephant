@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.vending-machine {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.9));
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.machine-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Hotspot for the knob - positioned over the golden knob */
+.hotspot {
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.hotspot:hover {
+    transform: scale(1.05);
+}
+
+.hotspot:active {
+    transform: scale(0.95);
+}
+
+.knob-hotspot {
+    /* Positioned over the golden knob */
+    bottom: 16%;
+    left: 25%;
+    width: 11%;
+    height: 9%;
+    border-radius: 50%;
+    display: none;
+}
+
+.knob-hotspot:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.4), transparent 70%);
+    animation: pulse 1s infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Spinning animation for knob */
+.knob-hotspot.spinning {
+    animation: spinKnob 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes spinKnob {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* Hotspot for the capsule - positioned over the dropped capsule */
+.capsule-hotspot {
+    /* Positioned over the dispensed capsule area */
+    bottom: 17%;
+    right: 8%;
+    width: 24%;
+    height: 20%;
+    border-radius: 50%;
+    display: none;
+}
+
+.capsule-hotspot:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+    animation: glow 1.5s infinite;
+    pointer-events: none;
+}
+
+@keyframes glow {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.15);
+    }
+}
+
+/* Clicking animation for capsule */
+.capsule-hotspot.clicking {
+    animation: clickBounce 0.3s ease;
+}
+
+@keyframes clickBounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+}
+
+/* Hotspot for the collect button - positioned over the button in the image */
+.collect-hotspot {
+    /* Positioned over the collect button in the opened state images */
+    bottom: 15%;
+    right: 6%;
+    width: 20%;
+    height: 9%;
+    border-radius: 20px;
+    display: none;
+}
+
+.collect-hotspot:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+    border-radius: 20px;
+    background: radial-gradient(ellipse, rgba(255, 215, 0, 0.4), transparent 70%);
+    animation: buttonPulse 1s infinite;
+    pointer-events: none;
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Clicking animation for collect button */
+.collect-hotspot.collecting {
+    animation: collectClick 0.3s ease;
+}
+
+@keyframes collectClick {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Vending Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="vending-machine">
+            <img id="machineImage" src="images/Vending machine default state.png" alt="Toy Vending Machine" class="machine-image">
+
+            <!-- Clickable hotspot for the knob (only visible in default state) -->
+            <div class="hotspot knob-hotspot" id="knobHotspot"></div>
+
+            <!-- Clickable hotspot for the capsule (only visible in dropped state) -->
+            <div class="hotspot capsule-hotspot" id="capsuleHotspot"></div>
+
+            <!-- Clickable hotspot for the collect button (only visible in opened state) -->
+            <div class="hotspot collect-hotspot" id="collectHotspot"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
