@@ -2,23 +2,23 @@
 const products = [
     {
         name: 'Coffee Maker',
-        droppedImage: 'images/Coffee maker capsule dropped.png',
-        openedImage: 'images/Coffee maker opened.png'
+        droppedImage: 'images/Coffee maker capsule dropped.webp',
+        openedImage: 'images/Coffee maker opened.webp'
     },
     {
         name: 'Water Bottle',
-        droppedImage: 'images/Water bottle dropped.png',
-        openedImage: 'images/Water bottle opened.png'
+        droppedImage: 'images/Water bottle dropped.webp',
+        openedImage: 'images/Water bottle opened.webp'
     },
     {
         name: 'Badminton Plush Toy',
-        droppedImage: 'images/Badminton plush toy dropped.png',
-        openedImage: 'images/Badminton plush toy opened.png'
+        droppedImage: 'images/Badminton plush toy dropped.webp',
+        openedImage: 'images/Badminton plush toy opened.webp'
     },
     {
         name: 'Cat Slippers',
-        droppedImage: 'images/Cat slippers dropped.png',
-        openedImage: 'images/Cat slippers opened.png'
+        droppedImage: 'images/Cat slippers dropped.webp',
+        openedImage: 'images/Cat slippers opened.webp'
     }
 ];
 
@@ -116,7 +116,7 @@ function returnToDefault() {
     // Reset to default state
     currentState = 'default';
     currentProduct = null;
-    machineImage.src = 'images/Vending machine default state.png';
+    machineImage.src = 'images/Vending machine default state.webp';
 
     updateUI();
 }
